@@ -7,11 +7,19 @@
 }
 
 .form-control input{
+    width: 50%;
     font-size: 16px;
     padding: 8px;
     margin-left: 20px;
     border-radius: 5px;
+    border: 1px solid;
 }
+
+.form-control input:focus{
+    background-color: rgb(212, 245, 222);
+    border: 1px solid green;
+}
+
 .form-actions{
     text-align: right;
     padding: 0px 50px;
