@@ -34,3 +34,25 @@
     background-color: #28A745;
     color: white;
 }
+
+.invalid input {
+    background-color: rgb(243, 198, 198);
+    border: 1px solid rgb(216, 32, 32);
+}
+
+.invalid input:focus{
+    background-color: rgb(233, 225, 190);
+    border: 1px solid rgb(243, 220, 17);
+}
+
+/* .show-error{
+    background-color: rgb(243, 198, 198);
+    border: 1px solid rgb(216, 32, 32);
+    visibility: visible;
+
+}
+
+.form-control-error input:focus{
+    background-color: rgb(243, 198, 198);
+    border: 1px solid rgb(216, 32, 32);
+} */

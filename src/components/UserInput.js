@@ -1,14 +1,20 @@
-import React, { Component } from 'react'
 import './UserInput.css'
+import React from 'react'
 
+export default function UserInput(props) {
 
-export default class UserInput extends Component {
-    render() {
-        return (
-            <div className="form-control">
-                <label htmlFor="name">First Name:</label>
-                <input type={this.props.type} name={this.props.name} value={this.props.value} onChange={(event) => {this.props.updateInputFields(this.props.name,event)}}/>
-            </div>
-        )
-    }
+    const inputFieldClasses = !props.inputIsValid ? 'form-control' : 'form-control invalid'
+
+    return (
+        <div className={inputFieldClasses}>
+            <label htmlFor="name">{props.lable}</label>
+            <input  className='' 
+                    type={props.type} 
+                    name={props.name} 
+                    value={props.value} 
+                    onChange={(event) => {props.updateInputFields(props.name,event)}}
+                    onBlur={(event) => {props.inputBlurHandle(event)}}
+                    />
+        </div>
+    )
 }
