@@ -26,56 +26,23 @@ export default class App extends Component {
   }
   
 
-
   submitHandle = event => {
     event.preventDefault();
 
     const formData = {...this.state.formData};
-    
-    if (formData.firstName.value === '') {
-        formData.firstName.isTouched = true
-        this.setState({
-          formData,
-        })
-    }
 
-    if (formData.lastName.value === '') {
-        formData.lastName.isTouched = true
-        this.setState({
-          formData,
-        })
-    }
+    ['firstName', 'lastName', 'password'].map((fieldName) => {
 
-    if (formData.password.value === '') {
-        formData.password.isTouched = true
-        this.setState({
-          formData,
-        })
-    }
-
-    if (formData.firstName.value !== '') {
-        formData.firstName.value = ''
-        formData.firstName.isTouched = false
-        this.setState({
-          formData,
-        })
-    }
-
-    if(formData.lastName.value !== '') {
-        formData.lastName.value = ''
-        formData.lastName.isTouched = false
-        this.setState({
-          formData,
-        })
-    }
-
-    if(formData.password.value !== '') {
-        formData.password.value = ''
-        formData.password.isTouched = false
-        this.setState({
-          formData,
-        })
-    }
+      if (formData[fieldName].value === '') {
+          formData[fieldName].isTouched = true
+      } else {
+        formData[fieldName].value = ''
+        formData[fieldName].isTouched = false
+      }
+      this.setState({
+        formData,
+      })
+    })
 
     console.log(formData,"form submited");
   }
